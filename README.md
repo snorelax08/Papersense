@@ -70,28 +70,10 @@ The user-facing interface is built for speed and aesthetics:
 
 ## 🚀 Getting Started (Local Setup)
 
-### 2. Backend Setup 🐍
+Follow these steps to get PaperSense running on your local machine.
 
-The backend handles all processing, indexing, and the API logic.
+### 1. Clone the Repository
 
 ```bash
-cd papersense-backend
-pip install -r requirements.txt
-python -m uvicorn api_main:app --reload --port 8000
-The backend will run at: http://127.0.0.1:80003. Frontend Setup ⚛️The frontend is the modern UI that interacts with the backend API.Bashcd papersense-frontend
-npm install
-npm run dev
-The frontend will run at: http://127.0.0.1:5173📁 Folder StructurePaperSense/
-│ 
-├── papersense-backend/
-│   ├── api_main.py         # Main FastAPI application and logic
-│   ├── pdfs/               # Directory where your PDFs are stored/uploaded
-│   ├── requirements.txt
-│   └── ...
-│ 
-└── papersense-frontend/
-    ├── src/
-    │   ├── index.css       # Custom, enhanced styling
-    │   ├── App.jsx         # Main React component
-    │   └── ...
-🔗 API EndpointsRouteMethodDescription/searchPOSTRuns the hybrid semantic + keyword search./uploadPOSTUploads and automatically indexes a new PDF./filesGETReturns a list of all currently indexed PDFs./historyGETRetrieves the recent search history./thumbnail/{file}GETRenders and returns a PDF thumbnail image stream./reloadPOSTForces the backend to rebuild the search indexes./healthGETBasic API health check.🧑‍💻 Developer & LicenseDeveloper: Atharwa Vatsyayan (snorelax08)Description: Created for personal productivity, knowledge management, and document understanding.License: This project is licensed under the MIT License — free to use, modify, and distribute. See the LICENSE file for details.
+git clone [https://github.com/snorelax08/PaperSense.git](https://github.com/snorelax08/PaperSense.git)
+cd PaperSense
