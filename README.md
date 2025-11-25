@@ -77,3 +77,77 @@ Follow these steps to get PaperSense running on your local machine.
 ```bash
 git clone [https://github.com/snorelax08/PaperSense.git](https://github.com/snorelax08/PaperSense.git)
 cd PaperSense
+## 2. Backend Setup 🐍
+
+The backend handles all processing, indexing, and the API logic.
+```bash
+cd papersense-backend
+pip install -r requirements.txt
+python -m uvicorn api_main:app --reload --port 8000
+```
+
+The backend will run at: **http://127.0.0.1:8000**
+
+## 3. Frontend Setup ⚛️
+
+The frontend is the modern UI that interacts with the backend API.
+```bash
+cd papersense-frontend
+npm install
+npm run dev
+```
+
+The frontend will run at: **http://127.0.0.1:5173**
+
+---
+
+## 📁 Folder Structure
+```
+PaperSense/
+│ 
+├── papersense-backend/
+│   ├── api_main.py         # Main FastAPI application and logic
+│   ├── pdfs/               # Directory where your PDFs are stored/uploaded
+│   ├── requirements.txt
+│   └── ...
+│ 
+└── papersense-frontend/
+    ├── src/
+    │   ├── index.css       # Custom, enhanced styling
+    │   ├── App.jsx         # Main React component
+    │   └── ...
+```
+
+---
+
+## 🔗 API Endpoints
+
+| Route | Method | Description |
+| :--- | :--- | :--- |
+| `/search` | POST | Runs the hybrid semantic + keyword search. |
+| `/upload` | POST | Uploads and automatically indexes a new PDF. |
+| `/files` | GET | Returns a list of all currently indexed PDFs. |
+| `/history` | GET | Retrieves the recent search history. |
+| `/thumbnail/{file}` | GET | Renders and returns a PDF thumbnail image stream. |
+| `/reload` | POST | Forces the backend to rebuild the search indexes. |
+| `/health` | GET | Basic API health check. |
+
+---
+
+## 🧑‍💻 Developer & License
+
+**Developer:** Atharwa Vatsyayan ([@snorelax08](https://github.com/snorelax08))
+
+**Description:** Created for personal productivity, knowledge management, and document understanding.
+
+**License:** This project is licensed under the MIT License — free to use, modify, and distribute. See the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+  
+### ⭐ If you find PaperSense useful, please consider giving it a star!
+
+Made with ❤️ by [snorelax08](https://github.com/snorelax08)
+
+</div>
