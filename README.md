@@ -1,161 +1,99 @@
-📄 PaperSense — AI-Powered Semantic PDF Search Engine
+<div align="center">
+  
+# 📄 PaperSense: AI-Powered Semantic PDF Search Engine
 
-PaperSense is an intelligent, local-first search engine that allows users to upload PDFs and instantly search through them using AI-powered semantic search, TF-IDF ranking, and keyword highlighting.
+![License](https://img.shields.io/github/license/snorelax08/PaperSense?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/snorelax08/PaperSense?style=for-the-badge)
+![Backend](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi)
+![Frontend](https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react)
+![Semantic Search](https://img.shields.io/badge/Search-SentenceTransformers-blue?style=for-the-badge&logo=pytorch)
 
-It is built for students, researchers, and professionals who need Google-like search inside their own documents.
+<br>
+<p align="center">
+  PaperSense is an intelligent, local-first search engine built for students, researchers, and professionals who need Google-like search capabilities within their private document collection.
+  <br>
+  It allows users to upload PDFs and instantly search through them using a powerful **AI-driven hybrid search** model.
+</p>
 
-🌟 Key Features
-🔍 AI Hybrid Search (Semantic + TF-IDF)
+</div>
 
-PaperSense combines:
+---
 
-SentenceTransformer embeddings (all-MiniLM-L6-v2)
+## 💡 About the Project
 
-TF-IDF keyword scoring
+In today's knowledge-heavy world, finding specific information buried deep within local PDF libraries is a challenge. PaperSense solves this by combining the power of modern **SentenceTransformer embeddings** with traditional **TF-IDF keyword ranking** to deliver contextually accurate search results, even for vague or conceptual queries.
 
-Hybrid weighted ranking (0.6 semantic + 0.4 keyword)
+### 🎥 Demo
 
-This generates highly accurate search results, even for vague queries.
+*Replace this markdown with an embedded GIF or a link to a video demonstration.*
 
-📦 Instant PDF Uploads
+****
 
-Drag & upload PDFs
+---
 
-Auto-indexed on the backend
+## 🌟 Key Features
 
-Available for search immediately
+| Feature | Description | Tech/Benefit |
+| :--- | :--- | :--- |
+| **🔍 AI Hybrid Search** | Combines **SentenceTransformer embeddings** (`all-MiniLM-L6-v2`) and **TF-IDF keyword scoring** for maximum relevance. | Hybrid weighted ranking (**0.6 semantic + 0.4 keyword**) generates highly accurate results. |
+| **📦 Instant PDF Uploads** | Simply drag & drop PDFs onto the UI. | Files are **auto-indexed on the Python backend** and available for semantic search immediately. |
+| **🖼️ Live PDF Thumbnails** | Each search result includes a high-quality thumbnail preview of the relevant page. | Uses **PyMuPDF (fitz)** for fast rendering and a JPEG stream for instant UI preview. |
+| **✨ Modern UI** | A clean, intuitive design supporting both **dark and light modes**. | Features **floating orbits**, **glass morphism**, smooth transitions, and real-time score badges. |
+| **💾 Local-First & Private** | The entire system runs locally on your machine. | **PDFs never leave your computer**, ensuring privacy and full **offline capability** (after the initial model download). |
+| **⚙️ Productivity Tools** | Includes search history, a clear indexed PDF list, and semantic **Score Badges** (High/Medium/Low). | Built for knowledge management and efficient document understanding. |
 
-🖼️ Live PDF Thumbnails
+---
 
-Each result shows a thumbnail of the first page using:
+## 💻 Tech Stack
 
-PyMuPDF (fitz) page rendering
+### Backend (Python) 🐍
 
-Fast JPEG stream
+PaperSense leverages a powerful Python stack for data processing, indexing, and serving:
 
-Instant preview inside the UI
+* **Framework:** [FastAPI](https://fastapi.tiangolo.com/) (Async, high-performance)
+* **Vector/Indexing:** [SentenceTransformers](https://www.sbert.net/) (for Semantic Embeddings)
+* **Ranking:** [scikit-learn](https://scikit-learn.org/stable/) (for TF-IDF scoring and hybrid ranking)
+* **PDF Parsing:** [PyPDF2](https://pypi.org/project/PyPDF2/)
+* **Thumbnail Generation:** [PyMuPDF (fitz)](https://pypi.org/project/PyMuPDF/)
+* **Server:** [Uvicorn](https://www.uvicorn.org/)
 
-✨ Modern UI (React + Custom CSS)
+### Frontend (React) ⚛️
 
-Clean dark & light modes
+The user-facing interface is built for speed and aesthetics:
 
-Floating orbits and glass morphism
+* **Framework:** [React](https://react.dev/) (via [Vite](https://vitejs.dev/))
+* **Styling:** Custom CSS (Optimized for performance and includes glass morphism effects)
+* **Communication:** Native Fetch API
+* **Design:** Fully **Responsive Layout**
 
-Smooth interactions
+---
 
-Real-time updates
+## 🚀 Getting Started (Local Setup)
 
-Search history
+Follow these steps to get PaperSense running on your local machine.
 
-Indexed PDF list
+### 1. Clone the Repository
 
-Score badges (High / Medium / Low)
-
-💾 Local-First
-
-Everything runs locally:
-
-PDFs never leave your machine
-
-All analysis done on-device
-
-Fully offline capable (except model download)
-
-🧠 Tech Stack
-Backend
-
-Python FastAPI
-
-PyPDF2
-
-SentenceTransformers
-
-scikit-learn
-
-PyMuPDF (fitz) — for PDF thumbnails
-
-Uvicorn
-
-Frontend
-
-React (Vite)
-
-Custom CSS (no Tailwind needed)
-
-Fetch API
-
-Responsive layout
-
-🚀 Getting Started (Local Setup)
-1. Clone the repo
-git clone https://github.com/snorelax08/PaperSense.git
+```bash
+git clone [https://github.com/snorelax08/PaperSense.git](https://github.com/snorelax08/PaperSense.git)
 cd PaperSense
-
-📌 Backend Setup
-cd papersense-backend
+2. Backend SetupThe backend handles all processing, indexing, and the API logic.Bashcd papersense-backend
 pip install -r requirements.txt
 python -m uvicorn api_main:app --reload --port 8000
-
-
-Backend runs at:
-
-http://127.0.0.1:8000
-
-🖥️ Frontend Setup
-cd papersense-frontend
+The backend will run at: http://127.0.0.1:80003. Frontend SetupThe frontend is the modern UI that interacts with the backend API.Bashcd papersense-frontend
 npm install
 npm run dev
-
-
-Frontend runs at:
-
-http://127.0.0.1:5173
-
-🔗 API Endpoints
-Route	Method	Description
-/search	POST	Run hybrid semantic + keyword search
-/upload	POST	Upload and index a new PDF
-/files	GET	List all indexed PDFs
-/history	GET	Get search history
-/thumbnail/{file}	GET	Render & return PDF thumbnail
-/reload	POST	Rebuild indexes
-/health	GET	API health check
-🎨 Screenshots (Add After Recording)
-
-You can add screenshots here like:
-
-![Search UI](assets/screenshot1.png)
-
-🧩 Folder Structure
-PaperSense/
-│
+The frontend will run at: http://127.0.0.1:5173📁 Folder StructurePaperSense/
+│ 
 ├── papersense-backend/
-│   ├── api_main.py
-│   ├── pdfs/
+│   ├── api_main.py         # Main FastAPI application and logic
+│   ├── pdfs/               # Directory where your PDFs are stored/uploaded
 │   ├── requirements.txt
 │   └── ...
-│
+│ 
 └── papersense-frontend/
     ├── src/
-    ├── index.css
-    ├── App.jsx
-    └── ...
-
-📜 License
-
-MIT License — free to use, modify, and distribute.
-
-🧑‍💻 Developer
-
-Atharwa Vatsyayan (snorelax08)
-Created for personal productivity, knowledge management, and document understanding.
-
-If you want, I can also generate:
-
-✅ A clean README banner
-✅ A logo for PaperSense
-✅ Animated GIF demo section
-✅ Deployment instructions for Render/Vercel
-✅ A professional “About the Project” section
-
-Just tell me — I can make the README look 10× more premium.
+    │   ├── index.css       # Custom, enhanced styling
+    │   ├── App.jsx         # Main React component
+    │   └── ...
+🔗 API EndpointsRouteMethodDescription/searchPOSTRuns the hybrid semantic + keyword search./uploadPOSTUploads and automatically indexes a new PDF./filesGETReturns a list of all currently indexed PDFs./historyGETRetrieves the recent search history./thumbnail/{file}GETRenders and returns a PDF thumbnail image stream./reloadPOSTForces the backend to rebuild the search indexes./healthGETBasic API health check.🧑‍💻 DeveloperAtharwa Vatsyayan (snorelax08)Created for personal productivity, knowledge management, and document understanding.📜 LicenseThis project is licensed under the MIT License — free to use, modify, and distribute. See the LICENSE file for details.
